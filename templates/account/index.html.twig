@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Skull - Account{% endblock %}
+
+{% block content %}
+
+<p> Bienvenue {{app.user.prenom}} dans votre compte.</p>
+
+<pre>
+    {{ dump(app.user) }}
+</pre>
+{% endblock %}
