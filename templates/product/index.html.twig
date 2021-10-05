@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Skull - Produits{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+
+{% for product in products %}
+
+      <div class="card w-25 m-5">
+        <div class="mt-2  h-100 fill">
+          <img class="card-img-top  h-100 fill " src="assets/images/uploads/{{product.Image}}" alt="Card image cap">
+        </div>
+      <div class="card-body m-auto">
+        <h5 class="card-title">{{product.Name}}</h5>
+            <p class="card-text">{{product.Subtitle}}</p>
+          <div class="">
+            <a href="#" class="btn btn-primary btn-price m-auto"><strong>{{product.Price / 100}} Balle !</strong></a>
+          </div>
+      </div>
+    </div>
+{% endfor %}
+  </div>
+</div>
+
+{% endblock %}

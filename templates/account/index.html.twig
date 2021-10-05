@@ -6,7 +6,11 @@
 
 <p> Bienvenue {{app.user.prenom}} dans votre compte.</p>
 
+<a class="nav-link" href="{{path("modify")}}">Modifier mes informations</a>
+
 <pre>
     {{ dump(app.user) }}
 </pre>
+
+
 {% endblock %}
