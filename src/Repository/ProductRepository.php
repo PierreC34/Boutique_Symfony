@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Classe\Search;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -47,4 +48,17 @@ class ProductRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findWithSearch(Search $search){
+        $query = $this
+                ->createQueryBuilder('p')
+                ->Select('c','p')
+                ->join('p.Id_category','c');
+
+                if(!empty($search->categories)){
+                    $query = $query
+                            ->andWhere('c.id IN (:categories)')
+                            ->setParameter('categories',$search->categories);
+                }
+            return $query->getQuery()->getResult();
+    }
 }
