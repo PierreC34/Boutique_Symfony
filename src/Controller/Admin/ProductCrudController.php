@@ -36,7 +36,7 @@ class ProductCrudController extends AbstractCrudController
         $this->entityManager = $entityManager;
         $products = $this->entityManager->getRepository(Product::class)->findAll();
     }
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
