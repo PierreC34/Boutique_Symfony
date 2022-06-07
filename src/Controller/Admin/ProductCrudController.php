@@ -52,9 +52,9 @@ class ProductCrudController extends AbstractCrudController
             TextareaField::new('Description',"Description"),
             MoneyField::new('Price',"Prix")->setCurrency("EUR"),
             AssociationField::new('Id_category',"Type de la categorie")
-                     
+
         ];
-       
+
     }
     
 }

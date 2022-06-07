@@ -21,7 +21,7 @@ class ProductController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-      /**
+    /**
      * @Route("/produit/{slug}",name="product")
      */
     public function show($slug)
@@ -47,7 +47,7 @@ class ProductController extends AbstractController
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-             $products = $this->entityManager->getRepository(Product::class)->findWithSearch($search);
+            $products = $this->entityManager->getRepository(Product::class)->findWithSearch($search);
         }else{
             $products = $this->entityManager->getRepository(Product::class)->findAll();
         }
